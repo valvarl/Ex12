@@ -5,7 +5,6 @@
 #include "TimedDoor.h"
 
 TEST(set1, test1) {
-
   TimedDoor tDoor(5);
   try {
     tDoor.lock();
@@ -17,7 +16,6 @@ TEST(set1, test1) {
 }
 
 TEST(set1, test2) {
-
   TimedDoor tDoor(5);
   try {
     tDoor.unlock();
@@ -29,7 +27,6 @@ TEST(set1, test2) {
 }
 
 TEST(set1, test3) {
-
   TimedDoor tDoor(5);
   try {
     tDoor.unlock();
@@ -40,7 +37,6 @@ TEST(set1, test3) {
 }
 
 TEST(set1, test4) {
-
   TimedDoor tDoor(5);
   time_t start = time(nullptr);
   time_t finish;
@@ -50,6 +46,6 @@ TEST(set1, test4) {
   catch(std::string message) {
     finish = time(nullptr);
     int delta = finish - start;
-    EXPECT_EQ(delta, 5 );
+    EXPECT_EQ(delta, 5);
   }
 }
