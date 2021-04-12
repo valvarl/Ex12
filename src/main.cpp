@@ -5,14 +5,12 @@
 
 int main() {
     TimedDoor tDoor(5);
-    time_t start = time(nullptr);
-    time_t finish;
     try {
-            tDoor.unlock();
-    } catch(const char *message) {
-        finish = time(nullptr);
-        int delta = finish - start;
-        std::cout << delta;
+        tDoor.lock();
+        tDoor.throwState();
+    }
+    catch(std::string message) {
+        std::cout << message;
     }
 
   return 0;

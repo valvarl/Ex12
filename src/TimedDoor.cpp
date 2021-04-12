@@ -29,13 +29,14 @@ void TimedDoor::lock() {
 
 void TimedDoor::DoorTimeOut() {
     if (opened) {
-        throw "close the door!";
+        throw std::string{"close the door!"};
         adapter->Timeout();
     }
 }
 
 void TimedDoor::throwState() {
-    throw (opened ? "the door is opened!" : "the door is closed!");
+    throw(opened ? std::string{"the door is opened!"} :
+    std::string{"the door is closed!"});
 }
 
 
